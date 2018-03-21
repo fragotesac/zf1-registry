@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-/**
- * @see Zend_Registry
- */
-require_once 'Zend/Registry.php';
 
 /**
  * @category   Zend
@@ -138,12 +134,10 @@ class Zend_RegistryTest extends PHPUnit\Framework\TestCase
 
     public function testRegistryExceptionInvalidClassname()
     {
-        try {
-            $registry = Zend_Registry::setClassName(new StdClass());
-            $this->fail('Expected exception, because setClassName() wants a string');
-        } catch (Zend_Exception $e) {
-            $this->assertContains('Argument is not a class name', $e->getMessage());
-        }
+        $this->expectException(\Zend_Exception::class);
+        $this->expectExceptionMessage('Argument is not a class name');
+
+        Zend_Registry::setClassName(new StdClass());
     }
 
     /**
@@ -184,7 +178,7 @@ class Zend_RegistryTest extends PHPUnit\Framework\TestCase
     public function testRegistryExceptionClassNotFound()
     {
         try {
-            $registry = @Zend_Registry::setClassName('classdoesnotexist');
+            @Zend_Registry::setClassName('classdoesnotexist');
             $this->fail('Expected exception, because we cannot initialize the registry using a non-existent class.');
         } catch (Zend_Exception $e) {
             $this->assertRegExp('/file .* does not exist or .*/i', $e->getMessage());

@@ -33,7 +33,7 @@ class Zend_Registry extends ArrayObject
      * Class name of the singleton registry object.
      * @var string
      */
-    private static $_registryClassName = 'Zend_Registry';
+    private static $_registryClassName = Zend_Registry::class;
 
     /**
      * Registry object provides storage for shared objects.
@@ -93,7 +93,7 @@ class Zend_Registry extends ArrayObject
      * @throws Zend_Exception if the registry is initialized or if the
      *   class name is not valid.
      */
-    public static function setClassName($registryClassName = 'Zend_Registry')
+    public static function setClassName($registryClassName = Zend_Registry::class)
     {
         if (self::$_registry !== null) {
             throw new Zend_Exception('Registry is already initialized');
@@ -113,7 +113,7 @@ class Zend_Registry extends ArrayObject
     /**
      * Unset the default registry instance.
      * Primarily used in tearDown() in unit tests.
-     * @returns void
+     * @return void
      */
     public static function _unsetInstance()
     {
