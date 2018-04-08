@@ -16,9 +16,9 @@
         "diablomedia/zendframework1-loader": "^1.0.0"
     },
     "autoload": {
-        "psr-0": {
-            "Zend_": "src/"
-        }
+        "classmap": [
+            "src/Zend/Registry.php"
+        ]
     },
     "autoload-dev": {
         "psr-0": {
