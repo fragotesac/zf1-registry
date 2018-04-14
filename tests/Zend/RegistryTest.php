@@ -126,7 +126,7 @@ class Zend_RegistryTest extends PHPUnit\Framework\TestCase
 
     public function testRegistryArrayAsProps()
     {
-        $registry = new Zend_Registry(array(), ArrayObject::ARRAY_AS_PROPS);
+        $registry      = new Zend_Registry(array(), ArrayObject::ARRAY_AS_PROPS);
         $registry->foo = 'bar';
         $this->assertTrue(isset($registry->foo));
         $this->assertEquals('bar', $registry->foo);
@@ -187,8 +187,8 @@ class Zend_RegistryTest extends PHPUnit\Framework\TestCase
 
     public function testDefaultRegistryArrayAsPropsZF4654()
     {
-        $registry = Zend_Registry::getInstance();
-        $registry->bar = "baz";
+        $registry      = Zend_Registry::getInstance();
+        $registry->bar = 'baz';
         $this->assertEquals('baz', Zend_Registry::get('bar'));
     }
 }
