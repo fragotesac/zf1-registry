@@ -1,10 +1,12 @@
+includes:
+    - phpstan-baseline.neon
 parameters:
-    level: 7
+    level: 8
     paths:
         - ./
     excludes_analyse:
-        - %rootDir%/../../../tests/*
-        - %rootDir%/../../../vendor/*
+        - tests/*
+        - vendor/*
     ignoreErrors:
         # The getInstance method checks if $_registry is null and inits if it is, so not possible to return null here
         - '#Method Zend_Registry::getInstance\(\) should return Zend_Registry but returns Zend_Registry\|null\.#'

@@ -1,0 +1,27 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Class Zend_Registry extends generic class ArrayObject but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Zend/Registry.php
+
+		-
+			message: "#^Property Zend_Registry\\:\\:\\$_registry type has no value type specified in iterable type Zend_Registry\\.$#"
+			count: 1
+			path: src/Zend/Registry.php
+
+		-
+			message: "#^Method Zend_Registry\\:\\:getInstance\\(\\) return type has no value type specified in iterable type Zend_Registry\\.$#"
+			count: 1
+			path: src/Zend/Registry.php
+
+		-
+			message: "#^Method Zend_Registry\\:\\:setInstance\\(\\) has parameter \\$registry with no value type specified in iterable type Zend_Registry\\.$#"
+			count: 1
+			path: src/Zend/Registry.php
+
+		-
+			message: "#^Method Zend_Registry\\:\\:__construct\\(\\) has parameter \\$array with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Zend/Registry.php
+
