@@ -1,6 +1,6 @@
-Zend Framework 1 - Registry
-============================
-[![Build Status](https://travis-ci.com/diablomedia/zf1-registry.svg?branch=master)](https://travis-ci.com/diablomedia/zf1-registry)
+# Zend Framework 1 - Registry
+
+[![Build](https://github.com/diablomedia/zf1-registry/workflows/Build/badge.svg?event=push)](https://github.com/diablomedia/zf1-registry/actions?query=workflow%3ABuild+event%3Apush)
 [![codecov](https://codecov.io/gh/diablomedia/zf1-registry/branch/master/graph/badge.svg)](https://codecov.io/gh/diablomedia/zf1-registry)
 [![Latest Stable Version](https://poser.pugx.org/diablomedia/zendframework1-registry/v/stable)](https://packagist.org/packages/diablomedia/zendframework1-registry)
 [![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1-registry/downloads)](https://packagist.org/packages/diablomedia/zendframework1-registry)
