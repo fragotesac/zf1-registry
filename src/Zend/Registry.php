@@ -32,6 +32,7 @@ class Zend_Registry extends ArrayObject
     /**
      * Class name of the singleton registry object.
      * @var string
+     * @phpstan-var class-string<Zend_Registry>
      */
     private static $_registryClassName = Zend_Registry::class;
 
@@ -89,6 +90,7 @@ class Zend_Registry extends ArrayObject
      * for the next time you instantiate.
      *
      * @param string $registryClassName
+     * @phpstan-param class-string<Zend_Registry> $registryClassName
      * @return void
      * @throws Zend_Exception if the registry is initialized or if the
      *   class name is not valid.
