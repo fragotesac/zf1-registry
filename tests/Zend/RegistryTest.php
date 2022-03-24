@@ -52,7 +52,7 @@ class Zend_RegistryTest extends PHPUnit\Framework\TestCase
     {
         // getting instance initializes instance
         $registry = Zend_Registry::getInstance();
-        $this->assertTrue($registry instanceof Zend_Registry);
+        $this->assertInstanceOf(Zend_Registry::class, $registry);
     }
 
     public function testRegistryUninitSet()
@@ -60,7 +60,7 @@ class Zend_RegistryTest extends PHPUnit\Framework\TestCase
         // setting value initializes instance
         Zend_Registry::set('foo', 'bar');
         $registry = Zend_Registry::getInstance();
-        $this->assertTrue($registry instanceof Zend_Registry);
+        $this->assertInstanceOf(Zend_Registry::class, $registry);
     }
 
     public function testRegistryUninitGet()
@@ -75,15 +75,15 @@ class Zend_RegistryTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString('No entry is registered for key', $e->getMessage());
         }
         $registry = Zend_Registry::getInstance();
-        $this->assertTrue($registry instanceof Zend_Registry);
+        $this->assertInstanceOf(Zend_Registry::class, $registry);
     }
 
     public function testRegistrySingletonSameness()
     {
         $registry1 = Zend_Registry::getInstance();
         $registry2 = Zend_Registry::getInstance();
-        $this->assertTrue($registry1 instanceof Zend_Registry);
-        $this->assertTrue($registry2 instanceof Zend_Registry);
+        $this->assertInstanceOf(Zend_Registry::class, $registry1);
+        $this->assertInstanceOf(Zend_Registry::class, $registry2);
         $this->assertEquals($registry1, $registry2);
         $this->assertSame($registry1, $registry2);
     }
